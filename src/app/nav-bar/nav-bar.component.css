@@ -1,0 +1,12 @@
+.navbar {
+    background-color: #232323;
+}
+
+.btn {
+    background-color: yellow;
+}
+
+.form-inline {
+    max-width: 1000px;
+    margin: 0 auto;
+}
