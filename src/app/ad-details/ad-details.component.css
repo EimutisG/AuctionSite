@@ -1,0 +1,8 @@
+.adDetails {
+    box-shadow: 0px 1px 2px gray;
+    max-height: 220px;
+}
+
+img {
+    max-height: 220px;
+}
