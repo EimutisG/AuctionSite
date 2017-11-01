@@ -11,6 +11,20 @@ import { MovieItemComponent } from './movie-item/movie-item.component';
 import { LoginRegisterPageComponent } from './login-register-page/login-register-page.component';
 import { PlaceAdPageComponent } from './place-ad-page/place-ad-page.component';
 
+import { LocationStrategy, HashLocationStrategy } from '@angular/common';
+import { RouterModule, Routes } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+
+const routes: Routes = [
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'home', component: AdListComponent },
+  { path: 'placead', component: PlaceAdPageComponent },
+  { path: 'loginregister', component: LoginRegisterPageComponent },
+  { path: 'register', redirectTo: 'loginregister' },  
+  { path: 'login', redirectTo: 'loginregister' }
+]
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,9 +38,14 @@ import { PlaceAdPageComponent } from './place-ad-page/place-ad-page.component';
     PlaceAdPageComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    RouterModule.forRoot(routes)
   ],
-  providers: [],
+  providers: [
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

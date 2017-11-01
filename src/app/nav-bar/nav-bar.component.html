@@ -1,19 +1,20 @@
 <nav class="navbar navbar-inverse bg-inverse">
   <form class="form-inline">
     <div class="row">
-      <div class="col-sm-2">
-        <button class="btn btn-outline-success" type="button">Place Ad</button>
+      <div class="col-sm-6">
+        <button class="btn" [routerLink]="['home']" type="button">Home</button>
+        <button class="btn" [routerLink]="['placead']" type="button">Place Ad</button>
       </div>
 
-      <div class="col-sm-4"></div>
+      <div class="col-sm-2"></div>
 
-      <div class="col-sm-3">
-        <button class="btn btn-outline-success" type="button">Login</button>
+      <div class="col-sm-2">
+        <button class="btn" [routerLink]="['loginregister']" type="button">Login / Sign Up</button>
       </div>
       <!-- The nav is a mess.. -->
-      <div class="col-sm-3">
+      <!-- <div class="col-sm-3">
         <button class="btn btn-outline-success" type="button">Sign Up</button>
-      </div>
+      </div> -->
 
     </div>
   </form>
