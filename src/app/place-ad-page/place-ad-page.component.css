@@ -1,0 +1,8 @@
+.movieOutput {
+    max-height: 80px;
+    box-shadow: 0px 1px 2px gray;
+}
+
+img {
+    max-height: 80px;
+}
