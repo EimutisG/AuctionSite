@@ -7,3 +7,13 @@
     margin-top: 10px;
     margin-bottom: 10px;
 }
+
+
+.btnScale {
+    -webkit-transition: .2s; /* Safari */
+    transition: .2s;
+}
+
+.btnScale:hover {
+    transform: scale(1.1,1.1);
+}

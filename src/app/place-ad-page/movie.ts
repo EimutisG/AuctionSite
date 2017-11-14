@@ -5,4 +5,6 @@ export class Movie {
     Rated: string;
     Poster: string;
     Plot: string;
+    Director: string;
+    Actors: string;
 }

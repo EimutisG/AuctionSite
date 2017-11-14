@@ -11,7 +11,7 @@ import {IMovie} from './IMovie';
 
 @Injectable()
 export class MovieService {
-    private urlBase: string = "http://www.omdbapi.com/?apikey=60d77be4&t=";
+    private urlBase: string = "http://www.omdbapi.com/?apikey=60d77be4&plot=long&t=";
 
     constructor(private http: Http) {}  
        

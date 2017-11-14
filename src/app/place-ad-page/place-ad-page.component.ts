@@ -16,10 +16,8 @@ export class PlaceAdPageComponent implements OnInit {
     film: Movie;
     errorMessage: string;
     movieName: string; 
-    //movies: IMovie[]; 
 
     constructor(private _movieService: MovieService) {  
-      //this.movies = [];  
     }  
 
     findMovieStart(x){
@@ -27,11 +25,8 @@ export class PlaceAdPageComponent implements OnInit {
       console.log("Movie Name ==> " + this.movieName);
       let self = this;  
       self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);  
-
     }
 
-    ngOnInit(): void {  
-
-  }  
+    ngOnInit(): void {   }  
 
 }
