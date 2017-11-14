@@ -1,10 +1,11 @@
 <form>
   <div class="row">
     <div class="col-sm-9">
-      <input type="text" class="form-control"/>
+      <input #movieName type="text" class="form-control"/>
+      <h6>{{movieName.value}}</h6>
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-success btn-block">Find Movie</button>
+      <button class="btn btn-success btn-block" (click)="findMovieStart(movieName.value)">Find Movie</button>
     </div>
   </div>
 </form>
@@ -12,8 +13,45 @@
 <hr/>
 
 <div class="movieOutput">
+
   <div class="row">
-    <div class="col-sm-2"><img class="img-responsive" src="https://searchengineland.com/figz/wp-content/seloads/2015/08/movie-film-video-production-ss-1920-800x450.jpg"/></div>
-    <div class="col-sm-6" style="padding-top: 15px;"><h3>Header</h3></div>
+    <div class="col-sm-3"><img class="img-responsive" src="{{film.Poster}}"/></div>
+    <div class="col-sm-7" style="padding-top: 15px;">
+      <h3>{{film.Title}}</h3>
+      <p>{{film.Plot}}</p>      
+    </div>
+    <div class="col-sm-2" style="padding-top: 30px; padding-left: 35px;">
+      (other useful info..)
+    </div>
   </div>
+
 </div>
+
+
+
+
+        <!-- <div>  
+            <h1>{{title}}</h1>  
+        </div>  
+
+        <div>
+          <h4>{{film.Title}}</h4>  
+          <p>{{film.Year}}</p>
+        </div>
+  -->
+
+ 
+    <!-- <h4>*** Movies ***</h4>
+    <ul class="heroes">
+        <li *ngFor="let movie of movies" [class.selected]="movie === selectedMovie" (click)="onSelect(movie)">
+            <span class="badge">{{movie.imdbID}}</span> {{hero.Title}}
+        </li>
+    </ul>
+    <div *ngIf="selectedMovie">
+        <h2>
+            {{selectedMovie.Title | uppercase}} selected..
+        </h2>
+        <button (click)="gotoDetail()">View Details</button>
+    </div> -->
+
+<!-- https://searchengineland.com/figz/wp-content/seloads/2015/08/movie-film-video-production-ss-1920-800x450.jpg -->
