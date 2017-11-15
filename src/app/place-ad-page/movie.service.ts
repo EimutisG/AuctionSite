@@ -25,4 +25,5 @@ export class MovieService {
         console.log(errorResponse.statusText);  
         return Observable.throw(errorResponse.json().error || "Server error");  
     } 
+
 }

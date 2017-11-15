@@ -17,16 +17,23 @@ export class PlaceAdPageComponent implements OnInit {
     errorMessage: string;
     movieName: string; 
 
-    constructor(private _movieService: MovieService) {  
-    }  
+    selMovieTitle: string;
+    selMovieID: string;
+
+    constructor(private _movieService: MovieService) {  }  
+
+    movieSelected(smt, id) {
+      this.selMovieTitle = smt;
+      this.selMovieID = id;
+      console.log("Movie: " + this.selMovieTitle + " - imdbID: " + this.selMovieID);
+    }
 
     findMovieStart(x){
       this.movieName = x;
-      console.log("Movie Name ==> " + this.movieName);
+      console.log("Movie searched ==> " + this.movieName);
       let self = this;  
       self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);  
     }
 
     ngOnInit(): void {   }  
-
 }
