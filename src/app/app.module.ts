@@ -10,21 +10,25 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { LoginRegisterPageComponent } from './login-register-page/login-register-page.component';
 import { PlaceAdPageComponent } from './place-ad-page/place-ad-page.component';
+import { SetPriceComponent } from './set-price/set-price.component';
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import {HttpClientModule} from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AdListComponent },
   { path: 'placead', component: PlaceAdPageComponent },
   { path: 'loginregister', component: LoginRegisterPageComponent },
+  { path: 'setprice', component: SetPriceComponent},
   { path: 'register', redirectTo: 'loginregister' },  
   { path: 'login', redirectTo: 'loginregister' }
+
 ]
 
 @NgModule({
@@ -37,7 +41,8 @@ const routes: Routes = [
     MovieListComponent,
     MovieItemComponent,
     LoginRegisterPageComponent,
-    PlaceAdPageComponent
+    PlaceAdPageComponent,
+    SetPriceComponent
   ],
   imports: [
     BrowserModule,
