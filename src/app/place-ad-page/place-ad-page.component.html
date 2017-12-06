@@ -24,8 +24,7 @@
 
 <hr/>
 
-<div class="movieOutput" (click)="movieSelected(filmTitle.innerText, filmID.innerText)">
-
+<div class="movieOutput" (click)="movieSelected(filmTitle.innerText, filmID.innerText)" [routerLink]="['../setprice']">
     <div class="row">
       <div class="col-sm-4"><img class="img-responsive" src="{{film.Poster}}"/></div>
       <div class="col-sm-8" style="padding-top: 20px;">
@@ -39,8 +38,6 @@
         <h6 class="grayText actors">{{"Actors: "+film.Actors}}</h6>
         <h6 style="display: none;" #filmID>{{film.imdbID}}</h6>
       </div>
-      <!-- <div class="col-sm-1" style="padding-top: 30px; padding-left: 35px;">
-      </div> -->
     </div>
 
 </div>
