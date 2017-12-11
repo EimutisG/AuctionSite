@@ -24,7 +24,12 @@
 
 <hr/>
 
-<div class="movieOutput" (click)="movieSelected(filmTitle.innerText, filmID.innerText)" [routerLink]="['../setprice']">
+<!-- ====================================================================== -->
+<!-- [routerLink]="['../setprice']" -->
+<!-- (click)="movieSelected(filmTitle.innerText, filmID.innerText)" -->
+<h3 *ngIf="searchBool"><em>Your result:</em></h3>
+
+<div *ngIf="searchBool" id="movieOutput" class="movieOutput" (click)="toggleDisplay()">
     <div class="row">
       <div class="col-sm-4"><img class="img-responsive" src="{{film.Poster}}"/></div>
       <div class="col-sm-8" style="padding-top: 20px;">
@@ -39,34 +44,39 @@
         <h6 style="display: none;" #filmID>{{film.imdbID}}</h6>
       </div>
     </div>
+</div>
 
+<!-- ====================================================================== -->
+<hr *ngIf="searchBool"/>
+
+<h3><em>Example:</em></h3>
+
+<div id="movieOutput" class="movieOutput" (click)="toggleDisplay()">
+  <div class="row">
+    <div class="col-sm-4"><img class="img-responsive" src="https://images-na.ssl-images-amazon.com/images/M/MV5BNTlkOWYzZDYtNzQ1MS00YTNkLTkyYTItMjBmNjgyMDBlMjI4XkEyXkFqcGdeQXVyNTIzOTk5ODM@._V1_SX300.jpg"/></div>
+    <div class="col-sm-8" style="padding-top: 20px;">
+      <h2 #filmTitle>The Dictator (2012)</h2>
+      <h5 class="grayText">Director: Larry Charles</h5>
+      <h5 class="grayText">Rated: R</h5>
+      <hr/>
+      <p>The heroic story of a dictator who risked his life to ensure that democracy would never come to the country he so lovingly oppressed.</p> 
+      <br/>
+      <br/>
+      <h6 class="grayText actors">Actors: Sacha Baron Cohen, Sayed Badreya, Rocky Citron, Liam Campora</h6>
+      <h6 style="display: none;" #filmID>tt1645170</h6>
+    </div>
+  </div>
 </div>
 
 
 
 
-        <!-- <div>  
-            <h1>{{title}}</h1>  
-        </div>  
 
-        <div>
-          <h4>{{film.Title}}</h4>  
-          <p>{{film.Year}}</p>
-        </div>
-  -->
 
- 
-    <!-- <h4>*** Movies ***</h4>
-    <ul class="heroes">
-        <li *ngFor="let movie of movies" [class.selected]="movie === selectedMovie" (click)="onSelect(movie)">
-            <span class="badge">{{movie.imdbID}}</span> {{hero.Title}}
-        </li>
-    </ul>
-    <div *ngIf="selectedMovie">
-        <h2>
-            {{selectedMovie.Title | uppercase}} selected..
-        </h2>
-        <button (click)="gotoDetail()">View Details</button>
-    </div> -->
 
-<!-- https://searchengineland.com/figz/wp-content/seloads/2015/08/movie-film-video-production-ss-1920-800x450.jpg -->
+<div *ngIf="divShow" (click)="toggleDisplay()" id="darkDiv"></div>
+<div *ngIf="divShow" id="setPrice">
+  <input class="form-control roundInput" type="text" placeholder="Enter price, eg. $59" #moviePrice/><br/>
+  <button id="setPriceBtn" (click)="movieSelected(filmTitle.innerText, filmID.innerText, moviePrice.value)" class="btn btn-block btn-success">Set Price</button>
+</div>
+

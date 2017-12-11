@@ -3,3 +3,7 @@
 // }
 
 // Dynamically write current year in footer
+
+// $("#movieOutput").on("click", function(){
+//     alert("clicked..");
+// });

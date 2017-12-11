@@ -15,6 +15,57 @@
     transform: scale(0.98,0.98);
 }
 
+#darkDiv {
+    background-color: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%; 
+}
+
+.roundInput {
+    border-radius: 30px;
+    height: 60px;
+    font-size: 20px;
+    max-width: 220px;
+    margin: 0 auto;
+}
+
+#setPrice {
+    background-color: white;
+    box-shadow: 0px 1px 2px gray;
+    padding: 20px;
+    padding-top: 30px;
+    position: fixed;
+    top: 100px;
+    left: 100px;
+    right: 100px;
+    margin: 0px auto;
+    bottom: 200px;
+    max-width: 300px;height: 200px;
+    z-index: 2;
+    border-radius: 20px;
+}
+
+#setPriceBtn {
+    -webkit-transition: .15s;
+    padding: 10px;
+    width: 150px;
+    margin: 0 auto;
+    font-size: 20px;
+    border-radius: 50px;
+
+}
+
+#setPriceBtn:hover {
+    transform: scale(1.1,1.1);
+    cursor: pointer;
+}
+#setPriceBtn:active {
+    transform: scale(0.98,0.98);
+}
+
 /* Button Style */
 .btnScale {
     -webkit-transition: .2s; /* Safari */
