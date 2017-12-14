@@ -1,23 +1,12 @@
 <script src="searchScript.js"></script>
 
 <form>
-<!-- <div class="row">
-      <div class="inputbox">
-      <div class="col-sm-12">
-        <input #movieName required="required"/>
-        <button class="del" type="reset"></button>
-      </div>
-
-      </div>
-</div> -->
-
-
 <div class="row">
     <div class="col-sm-9">
-      <input #movieName type="text" class="form-control" style="border-radius: 25px; font-size: 20px; text-align: center;" placeholder="Search for the movie you wish to sell.. eg Titanic?"/>
+      <input #movieName type="text" class="form-control" style="border-radius: 2px; font-size: 20px; text-align: center; background-color: rgba(0,0,0,.5)" placeholder="Search for the movie you wish to sell.. eg Titanic?"/>
     </div>
     <div class="col-sm-3">
-      <button class="btn btn-success btn-block btnScale"  style="border-radius: 25px; font-size: 20px;" (click)="findMovieStart(movieName.value)">Find Movie</button>
+      <button class="btn btn-success btn-block btnScale"  style="border-radius: 2px; font-size: 20px;" (click)="findMovieStart(movieName.value)">Find Movie</button>
     </div>
   </div> 
 </form>
@@ -27,9 +16,9 @@
 <!-- ====================================================================== -->
 <!-- [routerLink]="['../setprice']" -->
 <!-- (click)="movieSelected(filmTitle.innerText, filmID.innerText)" -->
-<h3 *ngIf="searchBool"><em>Your result:</em></h3>
+<h3 *ngIf="searchBool && validMovie" style="color: white;"><em>Your result:</em></h3>
 
-<div *ngIf="searchBool" id="movieOutput" class="movieOutput" (click)="toggleDisplay()">
+<div *ngIf="searchBool && validMovie" id="movieOutput" class="movieOutput" (click)="toggleDisplay()">
     <div class="row">
       <div class="col-sm-4"><img class="img-responsive" src="{{film.Poster}}"/></div>
       <div class="col-sm-8" style="padding-top: 20px;">
@@ -47,9 +36,9 @@
 </div>
 
 <!-- ====================================================================== -->
-<hr *ngIf="searchBool"/>
+<hr *ngIf="searchBool && validMovie"/>
 
-<h3><em>Example:</em></h3>
+<h3 style="color: white;"><em>Example:</em></h3>
 
 <div id="movieOutput" class="movieOutput" (click)="toggleDisplay()">
   <div class="row">

@@ -1,4 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    background-color: #f2f2f2;
+    /* background-color: #f2f2f2; */
+        background-image: url('https://www.hdwallpapers.in/walls/kung_fu_panda_3_po_family-HD.jpg');
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+}
+
+.btn {
+    -webkit-transition: .1s;
+}
+
+.btn:hover {
+    transform: scale(1.05,1.05);
+    cursor: pointer;
+}
+
+.btn:active {
+    transform: scale(0.95,0.95);
 }

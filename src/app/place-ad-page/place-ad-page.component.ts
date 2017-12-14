@@ -14,6 +14,7 @@ import {IMovie} from './IMovie';
 export class PlaceAdPageComponent implements OnInit {
     public divShow: boolean = false;
     public searchBool: boolean = false;
+    public validMovie: boolean = false;
 
     title = 'Movie List';   
     film: Movie;
@@ -48,9 +49,14 @@ export class PlaceAdPageComponent implements OnInit {
       this.movieName = x;
       console.log("Movie searched ==> " + this.movieName);
       let self = this;  
-      self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);  
-      
-      this.searchBool = true;
+
+      if(this.movieName != "") {
+        self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
+        this.searchBool = true;
+        this.validMovie = true;
+      }
+      else
+        console.log("No movie!");
     }
 
     ngOnInit(): void {   }  

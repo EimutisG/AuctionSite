@@ -1,18 +1,29 @@
-<form>
+<div id="signUpBackground">
   <div class="row">
-    <div class="col-sm-6 boxShadow">
-      <h2><em>Login</em></h2> <br/>
-      <input type="text" class="form-control" placeholder="Username / Email"/>   
-      <input type="password" class="form-control" placeholder="Password"/>    
-      <input type="button" class="btn btn-block btn-success" value="Login"/>
-    </div>
-    <div class="col-sm-6 boxShadow">
-      <h2><em>Sign Up</em></h2> <br/>
-      <input type="text" class="form-control" placeholder="Name"/>     
-      <input type="text" class="form-control" placeholder="Username / Email"/>    
-      <input type="password" class="form-control" placeholder="Password"/>   
-      <input type="password" class="form-control" placeholder="Password again"/>     
-      <input type="button" class="btn btn-block btn-success" value="Sign Up">
-    </div>
+    <form *ngIf="!showRegister" style="margin: 0 auto;">
+      <div class="col-sm-6 boxShadow">
+        <h2><em>Login</em></h2> <br/>
+        <input #emailLogin type="email" class="form-control" placeholder="Email"/>
+        <input #pwdLogin type="password" class="form-control" placeholder="Password"/>
+        <input (click)="login(emailLogin.value, pwdLogin.value)" type="button" class="btn btn-block btn-success" value="Login"/>
+        <hr/>
+        <button (click)="RegisterToggle()" class="btn btn-block btn-primary registerBtn">No account? Register</button>
+      </div>
+    </form>
+
+
+
+    <form *ngIf="showRegister" style="margin: 0 auto;">
+      <div class="col-sm-6 boxShadow">
+        <h2><em>Sign Up</em></h2> <br/>
+        <input #name ng-value="name" type="text" class="form-control" placeholder="Name"/>
+        <input #emailReg ng-value="emailReg" type="text" class="form-control" placeholder="Email"/>
+        <input #pwdReg ng-value="pwdReg" type="password" class="form-control" placeholder="Password"/>
+        <input type="password" class="form-control" placeholder="Password again"/>
+        <input (click)="register(emailReg.value, pwdReg.value, name.value)" type="button" class="btn btn-block btn-success" value="Sign Up">
+        <hr/>
+        <button (click)="RegisterToggle()" style="box-shadow: 0px 1px 2px gray;" class="btn btn-block btn-default">Login instead</button>
+      </div>
+    </form>
   </div>
-</form>
+</div>
