@@ -1,3 +1,4 @@
+<!-- Div for displaying objects from Adds array -->
 <div class="adDetails">
   <div class="row" (click)="findMovieStart(AdDetails.movieID)">
     <div class="col-md-5">
@@ -24,6 +25,7 @@
   </div>
 </div>
 
+<!-- Div to display movie details pullet from omdb based on imdbID clicked, to show working search function -->
 <div class="adDetails">
 <div *ngIf="searchBool && validMovie" id="movieOutput" class="movieOutput">
     <div class="row">

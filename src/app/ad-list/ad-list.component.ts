@@ -11,19 +11,21 @@ import {Movie} from '../place-ad-page/movie';
 })
 export class AdListComponent implements OnInit {
 
-  public searchBool: boolean = false;
-  public validMovie: boolean = false;
+  // public searchBool: boolean = false;
+  // public validMovie: boolean = false;
+  // Movies: Movie[];
+  // film: Movie;
+  // errorMessage: string;
+  // movieID: string;
 
-  Adds: AdDetails[];
-  Movies: Movie[];
-  film: Movie;
-  errorMessage: string;
-  movieID: string;
   
-  // blade runner 1982 tt0083658, blade runner 2017 tt1856101
+  // Array of adds
+  Adds: AdDetails[];
 
+    // Contructor with an array populated with imdbIDs and prices for adds
     constructor(private _movieService: MovieService) {
 
+       // blade runner 1982 tt0083658, blade runner 2017 tt1856101
       this.Adds = [
         new AdDetails('tt1856101','$39'),
         new AdDetails('tt0083658','$45')
@@ -31,6 +33,7 @@ export class AdListComponent implements OnInit {
       //this.getMovieDetails();
      }
 
+    
     //  findMovieStart(id){
     //   this.movieID = id;
     //   let self = this;  

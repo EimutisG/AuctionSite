@@ -12,17 +12,20 @@ import {Movie} from '../place-ad-page/movie';
   }
 })
 export class AdDetailsComponent implements OnInit {
-
+  // Input for adDetails (array)
   @Input() AdDetails: AdDetails;
 
+  // Booleans for imdb search
   public searchBool: boolean = false;
   public validMovie: boolean = false;
   errorMessage: string;
   film: Movie;
   movieID: string;
 
+  // Default constructor
   constructor(private _movieService: MovieService) {}
 
+  // Find movie by ID function
   findMovieStart(id){
     this.movieID = id;
     console.log("Movie searched ==> " + this.movieID);

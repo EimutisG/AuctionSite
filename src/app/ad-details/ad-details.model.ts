@@ -1,5 +1,6 @@
+// Model for AdDetails class
 export class AdDetails {
-    
+
     movieID: string;
     price: string;
 
