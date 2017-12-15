@@ -5,6 +5,16 @@
     margin: 0 auto;
     margin-bottom: 15px;
     background-color: rgba(255,255,255,.9);
+    -webkit-transition: .1s;
+}
+
+.adDetails:hover {
+    transform: scale(1.02,1.02);
+    cursor: pointer;
+}
+
+.adDetails:active {
+    transform: scale(0.97,0.97);
 }
 
 img {
