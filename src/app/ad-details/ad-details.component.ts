@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { AdDetails } from './ad-details.model';
-//import { Input } from '@angular/core/src/metadata/directives';
 
 @Component({
   selector: 'app-ad-details',
@@ -12,6 +11,7 @@ import { AdDetails } from './ad-details.model';
 })
 export class AdDetailsComponent implements OnInit {
   @Input() AdDetails: AdDetails;
+
 
   ngOnInit() {
   }
