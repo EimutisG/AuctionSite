@@ -36,11 +36,12 @@ export class PlaceAdPageComponent implements OnInit {
       this.selMovieID = id;
       this.selMoviePrice = price;
 
+
       if(this.selMoviePrice != "")
       {
         console.log("Movie: " + this.selMovieTitle + " - imdbID: " + this.selMovieID + " - Price: " + this.selMoviePrice);
         this.divShow = !this.divShow;
-        alert("Movie - " + this.selMovieTitle + " \nimdbID - " + this.selMovieID + " \nPrice - " + this.selMoviePrice);
+        alert("Movie - " + this.film.Title + " \nimdbID - " + this.film.imdbID + " \nPrice - " + this.selMoviePrice);
       }
     }
 
