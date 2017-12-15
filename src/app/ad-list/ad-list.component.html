@@ -1,4 +1,6 @@
 <h4 style="color: white;">Movies for sale:</h4>
 <hr/>
 
-<app-ad-details></app-ad-details>
+<app-ad-details
+    *ngFor="let add of Adds"
+    [AdDetails]="add"></app-ad-details>

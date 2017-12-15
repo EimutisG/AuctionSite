@@ -18,6 +18,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HttpClientModule } from '@angular/common/http';
+import { AdDetails } from './ad-details/ad-details.model';
 
 
 const routes: Routes = [
