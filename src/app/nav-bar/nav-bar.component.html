@@ -1,3 +1,4 @@
+
 <nav class="navbar navbar-inverse bg-inverse">
   <form class="form-inline">
     <div class="row">
@@ -11,13 +12,10 @@
       <div class="col-sm-2" *ngIf="!userLogedIn">
         <button class="btn" [routerLink]="['loginregister']" type="button">Login / Sign Up</button>
       </div>
+      
       <div class="col-sm-2" *ngIf="userLogedIn">
-        <button class="btn" [routerLink]="['loginregister']" (click)='logout()' type="button">Logout</button>
+        <button class="btn" [routerLink]="['loginregister']" (click)='logout()' type="button">Log Out</button>
       </div>
-      <!-- The nav is a mess.. -->
-      <!-- <div class="col-sm-3">
-        <button class="btn btn-outline-success" type="button">Sign Up</button>
-      </div> -->
 
     </div>
   </form>
