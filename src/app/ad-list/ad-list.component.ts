@@ -12,7 +12,12 @@ import {Movie} from '../place-ad-page/movie';
 export class AdListComponent implements OnInit {
 
   Adds: AdDetails[];
+  Movies: Movie[];
+  public searchBool: boolean = false;
+  public validMovie: boolean = false;
   film: Movie;
+  errorMessage: string;
+  movieID: string;
   
   // blade runner 1982 tt0083658, blade runner 2017 tt1856101
 
@@ -22,9 +27,40 @@ export class AdListComponent implements OnInit {
         new AdDetails('tt1856101','$39'),
         new AdDetails('tt0083658','$45')
       ];
+      this.getMovieDetails();
      }
 
+     findMovieStart(id){
+      this.movieID = id;
+      let self = this;  
+  
+      if(this.movieID != "") {
+        self._movieService.getMovieID(this.movieID).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
+        this.searchBool = true;
+        this.validMovie = true;
+        this.Movies.push(this.film);
+      }
+      else
+        console.log("No movie!");
+    }
+
+    getMovieDetails(){
+      // forEach (var add in this.Adds)
+      // {
+      //   this.findMovieStart(add.movieID);
+      //   console.log("Movie searched ==> " + add.movieID);
+      //   this.Movies.push(this.film);
+      // }
+      this.Adds.forEach(element => {
+        console.log("Movie searched ==> " + element.movieID);
+        this.findMovieStart(element.movieID);
+        console.log("Movie searched ==> " + this.film.Title);
+      });
+    }
+  
+
   ngOnInit() {
+    
   }
 
 }
