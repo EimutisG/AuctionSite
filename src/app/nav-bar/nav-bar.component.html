@@ -8,8 +8,11 @@
 
       <div class="col-sm-2"></div>
 
-      <div class="col-sm-2">
+      <div class="col-sm-2" *ngIf="!userLogedIn">
         <button class="btn" [routerLink]="['loginregister']" type="button">Login / Sign Up</button>
+      </div>
+      <div class="col-sm-2" *ngIf="userLogedIn">
+        <button class="btn" [routerLink]="['loginregister']" (click)='logout()' type="button">Logout</button>
       </div>
       <!-- The nav is a mess.. -->
       <!-- <div class="col-sm-3">

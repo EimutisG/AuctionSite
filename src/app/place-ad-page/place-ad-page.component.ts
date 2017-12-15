@@ -3,6 +3,7 @@ import {Router} from '@angular/router';
 import {Movie} from './movie';
 import {MovieService} from './movie.service';
 import {IMovie} from './IMovie';
+// import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-place-ad-page',
@@ -15,18 +16,20 @@ export class PlaceAdPageComponent implements OnInit {
     public divShow: boolean = false;
     public searchBool: boolean = false;
     public validMovie: boolean = false;
+    resultUser: boolean = false;
 
-    title = 'Movie List';   
+    title = 'Movie List';
     film: Movie;
     errorMessage: string;
-    movieName: string; 
+    movieName: string;
 
     selMovieTitle: string;
     selMovieID: string;
     selMoviePrice: string;
 
-    
-    constructor(private _movieService: MovieService) {  }  
+    constructor(private _movieService: MovieService) {
+
+     }
 
     movieSelected(smt, id, price) {
       this.selMovieTitle = smt;
@@ -48,10 +51,10 @@ export class PlaceAdPageComponent implements OnInit {
     findMovieStart(x){
       this.movieName = x;
       console.log("Movie searched ==> " + this.movieName);
-      let self = this;  
+      let self = this;
 
       if(this.movieName != "") {
-        self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
+        self._movieService.getMovies(this.movieName).subscribe(response => this.film = response, error => this.errorMessage = <any> error);
         this.searchBool = true;
         this.validMovie = true;
       }
@@ -59,5 +62,5 @@ export class PlaceAdPageComponent implements OnInit {
         console.log("No movie!");
     }
 
-    ngOnInit(): void {   }  
+    ngOnInit(): void {   }
 }

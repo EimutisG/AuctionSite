@@ -4,6 +4,7 @@ import { AngularFireDatabaseModule, AngularFireDatabase } from 'angularfire2/dat
 import { AngularFireAuth } from 'angularfire2/auth';
 import { NotificationService } from '../services/notification.service';
 import { AuthService } from '../services/auth.service';
+import { ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot } from '@angular/router';
 
 @Component({
   selector: 'app-login-register-page',
@@ -14,17 +15,20 @@ import { AuthService } from '../services/auth.service';
 export class LoginRegisterPageComponent implements OnInit {
   public showRegister: boolean = false;
 
-  public RegisterToggle() {
-    this.showRegister = !this.showRegister;
-  }
-
   emailReg: string;
   pwdReg: string;
   name: string;
   emailLogin: string;
   pwdLogin: string;
 
-  constructor(private auth: AuthService) {
+  public RegisterToggle() {
+    this.showRegister = !this.showRegister;
+  }
+
+  constructor(public auth: AuthService, private router: Router) {
+    if (auth.isLoggedIn() === true) {
+      this.router.navigate(['home']);
+    }
   }
 
   ngOnInit() {
@@ -41,9 +45,11 @@ export class LoginRegisterPageComponent implements OnInit {
 
   login(e: string, p: string) {
     this.auth.login(e, p);
-    //this.router.navigate(['home']);
+    // this.router.navigate(['home']);
     console.log(e);
     console.log(p);
+    console.log(this.auth.isLoggedIn());
+    location.reload();
     // this.authService.registerUser(this.registerData)
   }
 }
