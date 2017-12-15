@@ -10,24 +10,19 @@ import { MovieListComponent } from './movie-list/movie-list.component';
 import { MovieItemComponent } from './movie-item/movie-item.component';
 import { LoginRegisterPageComponent } from './login-register-page/login-register-page.component';
 import { PlaceAdPageComponent } from './place-ad-page/place-ad-page.component';
-<<<<<<< HEAD
 import { SetPriceComponent } from './set-price/set-price.component';
-=======
 import { environment } from '../environments/environment';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireAuthModule } from 'angularfire2/auth';
->>>>>>> Firebase
 
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-<<<<<<< HEAD
 import { HttpClientModule } from '@angular/common/http';
 import { AdDetails } from './ad-details/ad-details.model';
 
-=======
 import { AngularFireModule } from 'angularfire2';
 import { NotificationComponent } from './notification/notification.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -47,23 +42,19 @@ export const firebaseConfig = {
   storageBucket: '',
   messagingSenderId: '63417550637'
 };
->>>>>>> Firebase
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AdListComponent },
   { path: 'placead', component: PlaceAdPageComponent },
-<<<<<<< HEAD
-  { path: 'loginregister', component: LoginRegisterPageComponent },
+  // { path: 'loginregister', component: LoginRegisterPageComponent },
   { path: 'setprice', component: SetPriceComponent},
-  { path: 'register', redirectTo: 'loginregister' },  
-  { path: 'login', redirectTo: 'loginregister' }
+  { path: 'register', redirectTo: 'loginregister' },
+  { path: 'login', redirectTo: 'loginregister' },
 
-=======
   { path: 'loginregister', component: LoginRegisterPageComponent, canActivate: [AuthGuard] }
   //{ path: 'register', redirectTo: 'loginregister' },
   //{ path: 'login', redirectTo: 'loginregister' }
->>>>>>> Firebase
 ]
 
 @NgModule({
@@ -99,7 +90,6 @@ const routes: Routes = [
 >>>>>>> Firebase
   ],
   providers: [
-    { provide: LocationStrategy, useClass: HashLocationStrategy }
     { provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService, AuthGuard, NotificationService
   ],
   bootstrap: [AppComponent]
