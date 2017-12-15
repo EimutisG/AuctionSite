@@ -11,10 +11,11 @@ import {Movie} from '../place-ad-page/movie';
 })
 export class AdListComponent implements OnInit {
 
-  Adds: AdDetails[];
-  Movies: Movie[];
   public searchBool: boolean = false;
   public validMovie: boolean = false;
+
+  Adds: AdDetails[];
+  Movies: Movie[];
   film: Movie;
   errorMessage: string;
   movieID: string;
@@ -38,23 +39,16 @@ export class AdListComponent implements OnInit {
         self._movieService.getMovieID(this.movieID).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
         this.searchBool = true;
         this.validMovie = true;
-        this.Movies.push(this.film);
+        //this.Movies.push();
       }
       else
         console.log("No movie!");
     }
 
     getMovieDetails(){
-      // forEach (var add in this.Adds)
-      // {
-      //   this.findMovieStart(add.movieID);
-      //   console.log("Movie searched ==> " + add.movieID);
-      //   this.Movies.push(this.film);
-      // }
       this.Adds.forEach(element => {
         console.log("Movie searched ==> " + element.movieID);
         this.findMovieStart(element.movieID);
-        console.log("Movie searched ==> " + this.film.Title);
       });
     }
   

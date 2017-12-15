@@ -7,4 +7,9 @@ export class Movie {
     Plot: string;
     Director: string;
     Actors: string;
+
+    constructor(movieID: string, title: string){
+        this.imdbID = movieID;
+        this.Title = title;
+    }
 }
