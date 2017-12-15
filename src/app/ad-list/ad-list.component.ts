@@ -28,29 +28,29 @@ export class AdListComponent implements OnInit {
         new AdDetails('tt1856101','$39'),
         new AdDetails('tt0083658','$45')
       ];
-      this.getMovieDetails();
+      //this.getMovieDetails();
      }
 
-     findMovieStart(id){
-      this.movieID = id;
-      let self = this;  
+    //  findMovieStart(id){
+    //   this.movieID = id;
+    //   let self = this;  
   
-      if(this.movieID != "") {
-        self._movieService.getMovieID(this.movieID).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
-        this.searchBool = true;
-        this.validMovie = true;
-        //this.Movies.push();
-      }
-      else
-        console.log("No movie!");
-    }
+    //   if(this.movieID != "") {
+    //     self._movieService.getMovieID(this.movieID).subscribe(response => this.film = response, error => this.errorMessage = <any> error);    
+    //     this.searchBool = true;
+    //     this.validMovie = true;
+    //     //this.Movies.push();
+    //   }
+    //   else
+    //     console.log("No movie!");
+    // }
 
-    getMovieDetails(){
-      this.Adds.forEach(element => {
-        console.log("Movie searched ==> " + element.movieID);
-        this.findMovieStart(element.movieID);
-      });
-    }
+    // getMovieDetails(){
+    //   this.Adds.forEach(element => {
+    //     console.log("Movie searched ==> " + element.movieID);
+    //     this.findMovieStart(element.movieID);
+    //   });
+    // }
   
 
   ngOnInit() {
