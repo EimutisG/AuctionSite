@@ -26,8 +26,7 @@ export class LoginRegisterPageComponent implements OnInit {
   }
 
   constructor(public auth: AuthService, private router: Router) {
-    if (auth.isLoggedIn() === true) {
-      this.router.navigate(['home']);
+    if (auth.isLoggedIn()) {
     }
   }
 
@@ -38,6 +37,7 @@ export class LoginRegisterPageComponent implements OnInit {
     console.log(e);
     // console.log(p);
     this.auth.signup(e, p, n);
+    this.router.navigate(['home']);
     console.log(e);
     console.log(p);
     // this.authService.registerUser(this.registerData)
@@ -45,7 +45,7 @@ export class LoginRegisterPageComponent implements OnInit {
 
   login(e: string, p: string) {
     this.auth.login(e, p);
-    // this.router.navigate(['home']);
+    this.router.navigate(['home']);
     console.log(e);
     console.log(p);
     console.log(this.auth.isLoggedIn());
