@@ -51,10 +51,9 @@ const routes: Routes = [
   { path: 'setprice', component: SetPriceComponent},
   { path: 'register', redirectTo: 'loginregister' },
   { path: 'login', redirectTo: 'loginregister' },
-
   { path: 'loginregister', component: LoginRegisterPageComponent, canActivate: [AuthGuard] }
-  //{ path: 'register', redirectTo: 'loginregister' },
-  //{ path: 'login', redirectTo: 'loginregister' }
+  // { path: 'register', redirectTo: 'loginregister' },
+  // { path: 'login', redirectTo: 'loginregister' }
 ]
 
 @NgModule({
@@ -68,26 +67,20 @@ const routes: Routes = [
     MovieItemComponent,
     LoginRegisterPageComponent,
     PlaceAdPageComponent,
-<<<<<<< HEAD
-    SetPriceComponent
-=======
+    SetPriceComponent,
     NotificationComponent
->>>>>>> Firebase
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-<<<<<<< HEAD
-    RouterModule.forRoot(routes),
-    HttpClientModule
-=======
+    // RouterModule.forRoot(routes),
+    HttpClientModule,
     MatCardModule,
     RouterModule.forRoot(routes),
     AngularFireModule.initializeApp(environment.firebase, 'angular-auth-firebase'),
     AngularFireDatabaseModule,
     AngularFireAuthModule
->>>>>>> Firebase
   ],
   providers: [
     { provide: LocationStrategy, useClass: HashLocationStrategy }, AuthService, AuthGuard, NotificationService
