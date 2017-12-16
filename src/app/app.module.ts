@@ -47,13 +47,10 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: AdListComponent },
   { path: 'placead', component: PlaceAdPageComponent },
-  // { path: 'loginregister', component: LoginRegisterPageComponent },
   { path: 'setprice', component: SetPriceComponent},
   { path: 'register', redirectTo: 'loginregister' },
   { path: 'login', redirectTo: 'loginregister' },
   { path: 'loginregister', component: LoginRegisterPageComponent, canActivate: [AuthGuard] }
-  // { path: 'register', redirectTo: 'loginregister' },
-  // { path: 'login', redirectTo: 'loginregister' }
 ]
 
 @NgModule({
@@ -74,7 +71,6 @@ const routes: Routes = [
     BrowserModule,
     FormsModule,
     HttpModule,
-    // RouterModule.forRoot(routes),
     HttpClientModule,
     MatCardModule,
     RouterModule.forRoot(routes),

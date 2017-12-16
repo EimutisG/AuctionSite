@@ -18,7 +18,7 @@ export class AdListComponent implements OnInit {
   // errorMessage: string;
   // movieID: string;
 
-  
+
   // Array of adds
   Adds: AdDetails[];
 
@@ -33,7 +33,12 @@ export class AdListComponent implements OnInit {
       //this.getMovieDetails();
      }
 
-    
+    //--------------------------------------------------------------------------
+    // Code used for experimenting with omdb api, trying to push imdb ids stored
+    // in Adds array in order to retreive movie details. Unfortunately didn't 
+    // work as planned.
+    //--------------------------------------------------------------------------
+
     //  findMovieStart(id){
     //   this.movieID = id;
     //   let self = this;  

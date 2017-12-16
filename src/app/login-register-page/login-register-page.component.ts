@@ -21,6 +21,7 @@ export class LoginRegisterPageComponent implements OnInit {
   emailLogin: string;
   pwdLogin: string;
 
+  // Method for switching between the Login and SignUp forms
   public RegisterToggle() {
     this.showRegister = !this.showRegister;
   }
@@ -33,23 +34,16 @@ export class LoginRegisterPageComponent implements OnInit {
   ngOnInit() {
   }
 
+  // Method for registering user on Firebase
   register(e: string, p: string, n: string) {
-    console.log(e);
-    // console.log(p);
     this.auth.signup(e, p, n);
     this.router.navigate(['home']);
-    console.log(e);
-    console.log(p);
-    // this.authService.registerUser(this.registerData)
   }
 
+  // Method for logging user on Firebase
   login(e: string, p: string) {
     this.auth.login(e, p);
     this.router.navigate(['home']);
-    console.log(e);
-    console.log(p);
-    console.log(this.auth.isLoggedIn());
     location.reload();
-    // this.authService.registerUser(this.registerData)
   }
 }

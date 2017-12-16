@@ -3,7 +3,6 @@ import {Router} from '@angular/router';
 import {Movie} from './movie';
 import {MovieService} from './movie.service';
 import {IMovie} from './IMovie';
-// import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-place-ad-page',
